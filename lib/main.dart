@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider/counter_app/screens/counter_screen.dart';
+import 'package:flutter_provider/ecommerce/screens/login_screen.dart';
 import 'package:flutter_provider/providers.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: CounterAppScreen(),
+      debugShowCheckedModeBanner: false,
+      home: LoginScreen(),
     );
   }
 }

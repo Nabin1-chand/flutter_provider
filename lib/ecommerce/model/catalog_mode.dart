@@ -19,6 +19,7 @@ class CatalogModel {
     'Me',
   ];
   Item getById(int id) => Item(id, itemNames[id % itemNames.length]);
+  
   Item getByPosition(int position) {
     return getById(position);
   }
