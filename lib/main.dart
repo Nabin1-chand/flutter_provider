@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider/counter_app/provider_counter/counter_provider.dart';
 import 'package:flutter_provider/counter_app/screens/counter_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => Counter(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

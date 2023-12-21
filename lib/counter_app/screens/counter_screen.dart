@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider/counter_app/provider_counter/counter_provider.dart';
+import 'package:provider/provider.dart';
 
 class CounterAppScreen extends StatelessWidget {
   const CounterAppScreen({super.key});
@@ -6,10 +8,25 @@ class CounterAppScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          
-        ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          var counter = context.read<Counter>();
+          counter.increment();
+        },
+        child: const Icon(Icons.add),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 70,
+            ),
+            const Text("Increment the value"),
+            Consumer<Counter>(builder: (context, counter, child) {
+              return Text('${counter.count}');
+            })
+          ],
+        ),
       ),
     );
   }
