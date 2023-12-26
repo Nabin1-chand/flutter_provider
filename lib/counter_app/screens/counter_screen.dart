@@ -22,9 +22,11 @@ class CounterAppScreen extends StatelessWidget {
               height: 70,
             ),
             const Text("Increment the value"),
-            Consumer<Counter>(builder: (context, counter, child) {
-              return Text('${counter.count}');
-            })
+            Text(Provider.of<Counter>(context, listen: true).count.toString())
+
+            // Consumer<Counter>(builder: (context, counter, child) {
+            //   return Text('${counter.count}');
+            // })
           ],
         ),
       ),
