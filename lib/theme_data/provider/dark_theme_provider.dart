@@ -7,6 +7,11 @@ class DarkThemeProvider with ChangeNotifier {
 
   bool get darkTheme => _darkTheme;
 
+  init() async {
+    _darkTheme = await darkThemePreference.getTheme();
+    notifyListeners();
+  }
+
   set darkTheme(bool value) {
     _darkTheme = value;
     darkThemePreference.setDarkTheme(value);

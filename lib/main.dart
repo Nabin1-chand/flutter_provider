@@ -17,17 +17,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  DarkThemeProvider themeChangeProvider = DarkThemeProvider();
   @override
   void initState() {
     super.initState();
-    // getCurrentAppTheme();
+    getCurrentAppTheme();
   }
 
-  // void getCurrentAppTheme() async {
-  //   themeChangeProvider.darkTheme =
-  //       await themeChangeProvider.darkThemePreference.getTheme();
-  // }
+  void getCurrentAppTheme() async {
+    await Provider.of<DarkThemeProvider>(context, listen: false).init();
+  }
 
   @override
   Widget build(BuildContext context) {
